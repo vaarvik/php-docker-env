@@ -27,6 +27,8 @@ To set up the PHP Docker environment, follow these steps:
     docker-compose up -d
     ```
 
+    If this fails, make sure you have no other docker containers running at the ports given in `docker-compose.yml`.
+
 4. **Access the Application:** Once the containers are up and running, you can access your PHP application via a web browser at `http://127.0.0.1`. Note that Nginx's welcome screen may be displayed at `http://localhost`.
 5. **Navigate to your theme folder:** In the same terminal window, change the directory to the mytheme theme folder:
     ```

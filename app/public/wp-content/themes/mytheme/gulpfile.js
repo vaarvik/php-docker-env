@@ -216,7 +216,6 @@ gulp.task('styles', function (done) {
 //browsersync
 gulp.task('browser-sync', function (done) {
     browserSync.init({
-        // watch: true,
         proxy: '127.0.0.1',
         files: ['./'],
     });
