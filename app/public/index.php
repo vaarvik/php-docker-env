@@ -1,8 +1,17 @@
 <?php
-$pdo = new PDO('mysql:dbname=test;host=mysql', 'test', 'secret', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-$query = $pdo->query('SHOW VARIABLES like "version"');
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
 
-$row = $query->fetch();
-
-echo 'MySQL version:' . $row['Value'];
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wp-blog-header.php';

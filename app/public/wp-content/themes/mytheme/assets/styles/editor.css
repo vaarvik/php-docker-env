@@ -1,0 +1,893 @@
+@charset "UTF-8";
+
+/**
+ *
+ * ███████╗██████╗ ██╗████████╗ ██████╗ ██████╗
+ * ██╔════╝██╔══██╗██║╚══██╔══╝██╔═══██╗██╔══██╗
+ * █████╗  ██║  ██║██║   ██║   ██║   ██║██████╔╝
+ * ██╔══╝  ██║  ██║██║   ██║   ██║   ██║██╔══██╗
+ * ███████╗██████╔╝██║   ██║   ╚██████╔╝██║  ██║
+ * ╚══════╝╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * All the SASS files that should be included in the editor view
+ *
+ * The file/folder structure follows the basic guidelines of SMACSS. In addition to the default categories there has also been added Global (storing SCSS variables) and Utilities (storing general helper classes).
+
+From http://smacss.com/book/categorizing:
+
+"At the very core of SMACSS is categorization. By categorizing CSS rules, we begin to see patterns and can define better practices around each of these patterns."
+There are five types of categories:
+ * Base
+ * Layout
+ * Module
+ * State
+ * Theme
+
+However with some modifications this is the categories for this project:
+ * Global
+ * Base
+ * Layout
+ * Module
+ * State
+ * Theme
+
+GLOBAL
+==========
+Global is used to store SCSS variables (font-sizes, spacing, etc.) and overall document styles as the font-size for the HTML tag.
+
+BASE
+==========
+Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.
+Layout rules divide the page into sections.
+
+LAYOUTS
+==========
+Layouts hold one or more modules together.
+
+MODULES
+==========
+Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.
+
+STATE
+==========
+State rules are ways to describe how our modules or layouts will look when in a particular state. Is it hidden or expanded? Is it active or inactive? They are about describing how a module or layout looks on screens that are smaller or bigger. They are also about describing how a module might look in different views like the home page or the inside page.
+
+THEME
+==========
+Finally, Theme rules are similar to state rules in that they describe how modules or layouts might look. Most sites don’t require a layer of theming but it is good to be aware of it."
+
+*/
+
+/**
+ * =========================
+ *    || Global
+ * =========================
+ */
+
+/**
+ *
+ *  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
+ * ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
+ * ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
+ * ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
+ * ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
+ *  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * Global color variables
+ *
+ * This sheet is a part of the Global folder which is not really a part of SMACSS:
+ * Global stores variables that can be used all over the document and create a consistency in the style.
+*/
+
+/**
+ *
+ * ███████╗██╗███████╗███████╗███████╗
+ * ██╔════╝██║╚══███╔╝██╔════╝██╔════╝
+ * ███████╗██║  ███╔╝ █████╗  ███████╗
+ * ╚════██║██║ ███╔╝  ██╔══╝  ╚════██║
+ * ███████║██║███████╗███████╗███████║
+ * ╚══════╝╚═╝╚══════╝╚══════╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * Global size variables
+ *
+ * This sheet is a part of the Global folder which is not really a part of SMACSS:
+ * Global stores variables that can be used all over the document and create a consistency in the style.
+*/
+
+html {
+  height: 100%;
+}
+
+/**
+ *
+ * ████████╗███████╗██╗  ██╗████████╗
+ * ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
+ *    ██║   █████╗   ╚███╔╝    ██║
+ *    ██║   ██╔══╝   ██╔██╗    ██║
+ *    ██║   ███████╗██╔╝ ██╗   ██║
+ *    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * Global text/font variables
+ *
+ * This sheet is a part of the Global folder which is not really a part of SMACSS:
+ * Global stores variables that can be used all over the document and create a consistency in the style.
+*/
+
+html {
+  font-size: 18px;
+}
+
+/**
+ *
+ * ███████╗██╗   ██╗███╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
+ * ██╔════╝██║   ██║████╗  ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+ * █████╗  ██║   ██║██╔██╗ ██║██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
+ * ██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
+ * ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
+ * ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * Handy SCSS functions
+ *
+ * This sheet is a part of the Global folder which is not really a part of SMACSS:
+ * Global stores variables that can be used all over the document and create a consistency in the style.
+*/
+
+/**
+ * String Replace
+ *
+ * @param   {string}  $string   The string/character to find
+ * @param   {string}  $search   The string that should be searched
+ * @param   {string}  $replace  The string to replace the string/character that is found
+ *
+ * @return  {string}            The new string with the replaced string/character.
+ */
+
+/**
+ *
+ * ███╗   ███╗███████╗██████╗ ██╗ █████╗     ███╗   ███╗██╗██╗  ██╗██╗███╗   ██╗███████╗
+ * ████╗ ████║██╔════╝██╔══██╗██║██╔══██╗    ████╗ ████║██║╚██╗██╔╝██║████╗  ██║██╔════╝
+ * ██╔████╔██║█████╗  ██║  ██║██║███████║    ██╔████╔██║██║ ╚███╔╝ ██║██╔██╗ ██║███████╗
+ * ██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║    ██║╚██╔╝██║██║ ██╔██╗ ██║██║╚██╗██║╚════██║
+ * ██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║    ██║ ╚═╝ ██║██║██╔╝ ██╗██║██║ ╚████║███████║
+ * ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * Mediaqueries for different media.
+ *
+ * This sheet is a part of the Utilities folder which is not really a part of SMACSS:
+ * General classes/helpers that can be used to extend other classes. Often general styles that can be applied wherever.
+ */
+
+/**
+ * Check for IE
+ */
+
+/**
+ * Media queries
+ */
+
+/**
+ * =========================
+ *    || Tablets (landscape)
+ * =========================
+ * Tablets in landscape mode and less
+ */
+
+/**
+ * =========================
+ *    || Tablets (portrait )
+ * =========================
+ * Tablets in portrait mode and less, large display smartphones landscape mode and less
+ */
+
+/**
+ * =========================
+ *    || Phones (landscape)
+ * =========================
+ * Smartphones in landscape mode and less
+ */
+
+/**
+ * =========================
+ *    || Phones (portrait)
+ * =========================
+ * Smartphones in portrait mode and less
+ */
+
+/**
+ * =========================
+ *    || Base
+ * =========================
+ */
+
+/**
+ *
+ * ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+ * ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+ * ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+ * ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+ * ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+ *  ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * Utilities for general classes
+ *
+ * This sheet is a part of the Base folder and follow the Base rules:
+ * A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes.
+ * It doesn’t include any class or ID selectors, however this document does because it's utilities. It is defining the default styling for how that element should look in all occurrences on the page.
+*/
+
+.alignfull {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.alignwide {
+  width: 960px;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.edit-post-visual-editor {
+  /**
+   *
+   * ██████╗ ███████╗███████╗███████╗████████╗
+   * ██╔══██╗██╔════╝██╔════╝██╔════╝╚══██╔══╝
+   * ██████╔╝█████╗  ███████╗█████╗     ██║
+   * ██╔══██╗██╔══╝  ╚════██║██╔══╝     ██║
+   * ██║  ██║███████╗███████║███████╗   ██║
+   * ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝   ╚═╝
+   *
+   *
+   * This sheet contains:
+   * * Resets of tags
+   *
+   * This sheet is a part of the Base folder and follow the Base rules:
+   * A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes.
+   * It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+  */
+  /**
+   *
+   * ██╗    ██╗██████╗  █████╗ ██████╗ ██████╗ ███████╗██████╗ ███████╗
+   * ██║    ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝
+   * ██║ █╗ ██║██████╔╝███████║██████╔╝██████╔╝█████╗  ██████╔╝███████╗
+   * ██║███╗██║██╔══██╗██╔══██║██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══██╗╚════██║
+   * ╚███╔███╔╝██║  ██║██║  ██║██║     ██║     ███████╗██║  ██║███████║
+   *  ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
+   *
+   *
+   * This sheet contains:
+   * * Styling of wrapper tags
+   *
+   * This sheet is a part of the Base folder and follow the Base rules:
+   * A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes.
+   * It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+  */
+  /**
+   *
+   * ███████╗██╗ ██████╗ ██╗   ██╗██████╗ ███████╗███████╗
+   * ██╔════╝██║██╔════╝ ██║   ██║██╔══██╗██╔════╝██╔════╝
+   * █████╗  ██║██║  ███╗██║   ██║██████╔╝█████╗  ███████╗
+   * ██╔══╝  ██║██║   ██║██║   ██║██╔══██╗██╔══╝  ╚════██║
+   * ██║     ██║╚██████╔╝╚██████╔╝██║  ██║███████╗███████║
+   * ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+   *
+   *
+   * This sheet contains:
+   * * Styling of figure tags
+   *
+   * This sheet is a part of the Base folder and follow the Base rules:
+   * A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes.
+   * It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+  */
+  /**
+   *
+   * ████████╗██╗   ██╗██████╗  ██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗   ██╗
+   * ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔═══██╗██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║╚██╗ ██╔╝
+   *    ██║    ╚████╔╝ ██████╔╝██║   ██║██║  ███╗██████╔╝███████║██████╔╝███████║ ╚████╔╝
+   *    ██║     ╚██╔╝  ██╔═══╝ ██║   ██║██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║  ╚██╔╝
+   *    ██║      ██║   ██║     ╚██████╔╝╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║   ██║
+   *    ╚═╝      ╚═╝   ╚═╝      ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝   ╚═╝
+   *
+   *
+   * This sheet contains:
+   * * Typography changes to tags
+   * * Typography tags
+   *
+   * This sheet is a part of the Base folder and follow the Base rules:
+   * A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes.
+   * It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+  */
+  /**
+   * =========================
+   *    || Container tags
+   * =========================
+   */
+  /**
+   * =========================
+   *    || Typography tags
+   * =========================
+   */
+  /**
+   * =========================
+   *    || Figures tags
+   * =========================
+   */
+  /**
+   * =========================
+   *    || Listings tags
+   * =========================
+   */
+}
+
+.edit-post-visual-editor html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.edit-post-visual-editor body,.edit-post-visual-editor div,.edit-post-visual-editor main,.edit-post-visual-editor span,.edit-post-visual-editor object,.edit-post-visual-editor iframe,.edit-post-visual-editor h1,.edit-post-visual-editor h2,.edit-post-visual-editor h3,.edit-post-visual-editor h4,.edit-post-visual-editor h5,.edit-post-visual-editor h6,.edit-post-visual-editor p,.edit-post-visual-editor blockquote,.edit-post-visual-editor pre,.edit-post-visual-editor a,.edit-post-visual-editor abbr,.edit-post-visual-editor address,.edit-post-visual-editor big,.edit-post-visual-editor cite,.edit-post-visual-editor code,.edit-post-visual-editor del,.edit-post-visual-editor dfn,.edit-post-visual-editor em,.edit-post-visual-editor img,.edit-post-visual-editor ins,.edit-post-visual-editor kbd,.edit-post-visual-editor q,.edit-post-visual-editor s,.edit-post-visual-editor samp,.edit-post-visual-editor small,.edit-post-visual-editor strong,.edit-post-visual-editor sub,.edit-post-visual-editor sup,.edit-post-visual-editor tt,.edit-post-visual-editor var,.edit-post-visual-editor b,.edit-post-visual-editor u,.edit-post-visual-editor i,.edit-post-visual-editor center,.edit-post-visual-editor dl,.edit-post-visual-editor dt,.edit-post-visual-editor dd,.edit-post-visual-editor ol,.edit-post-visual-editor ul,.edit-post-visual-editor li,.edit-post-visual-editor fieldset,.edit-post-visual-editor form,.edit-post-visual-editor label,.edit-post-visual-editor legend,.edit-post-visual-editor table,.edit-post-visual-editor caption,.edit-post-visual-editor tbody,.edit-post-visual-editor tfoot,.edit-post-visual-editor thead,.edit-post-visual-editor tr,.edit-post-visual-editor th,.edit-post-visual-editor td,.edit-post-visual-editor article,.edit-post-visual-editor aside,.edit-post-visual-editor canvas,.edit-post-visual-editor details,.edit-post-visual-editor embed,.edit-post-visual-editor figure,.edit-post-visual-editor figcaption,.edit-post-visual-editor footer,.edit-post-visual-editor header,.edit-post-visual-editor hgroup,.edit-post-visual-editor menu,.edit-post-visual-editor nav,.edit-post-visual-editor output,.edit-post-visual-editor ruby,.edit-post-visual-editor section,.edit-post-visual-editor summary,.edit-post-visual-editor time,.edit-post-visual-editor mark,.edit-post-visual-editor audio,.edit-post-visual-editor video,.edit-post-visual-editor article,.edit-post-visual-editor aside,.edit-post-visual-editor details,.edit-post-visual-editor figcaption,.edit-post-visual-editor figure,.edit-post-visual-editor footer,.edit-post-visual-editor header,.edit-post-visual-editor hgroup,.edit-post-visual-editor menu,.edit-post-visual-editor nav,.edit-post-visual-editor section,.edit-post-visual-editor ol,.edit-post-visual-editor ul,.edit-post-visual-editor blockquote,.edit-post-visual-editor q,.edit-post-visual-editor table,.edit-post-visual-editor blockquote:before,.edit-post-visual-editor blockquote:after,.edit-post-visual-editor q:before,.edit-post-visual-editor q:after,.edit-post-visual-editor input[type=search],.edit-post-visual-editor textarea,.edit-post-visual-editor audio,.edit-post-visual-editor canvas,.edit-post-visual-editor video,.edit-post-visual-editor a:focus,.edit-post-visual-editor a:active,.edit-post-visual-editor a:hover,.edit-post-visual-editor img,.edit-post-visual-editor figure,.edit-post-visual-editor button,.edit-post-visual-editor input,.edit-post-visual-editor select,.edit-post-visual-editor textarea,.edit-post-visual-editor select,.edit-post-visual-editor button,.edit-post-visual-editor input[type=button],.edit-post-visual-editor input[type=reset],.edit-post-visual-editor input[type=submit],.edit-post-visual-editor button[disabled],.edit-post-visual-editor input[disabled],.edit-post-visual-editor input[type=checkbox],.edit-post-visual-editor input[type=radio] {
+  outline: 0;
+  vertical-align: baseline;
+}
+
+.edit-post-visual-editor *,.edit-post-visual-editor *::before,.edit-post-visual-editor *::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.edit-post-visual-editor [hidden] {
+  display: none;
+}
+
+.edit-post-visual-editor html {
+  overflow-x: hidden;
+}
+
+.edit-post-visual-editor body {
+  background-color: #ffffff;
+  margin: 0;
+}
+
+.edit-post-visual-editor canvas {
+  border: 3px solid #0d0d0d;
+}
+
+.edit-post-visual-editor img {
+  margin: 0;
+  display: block;
+}
+
+.edit-post-visual-editor audio,.edit-post-visual-editor video,.edit-post-visual-editor canvas,.edit-post-visual-editor iframe,.edit-post-visual-editor meter,.edit-post-visual-editor progress,.edit-post-visual-editor figure,.edit-post-visual-editor figcaption {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.edit-post-visual-editor body {
+  font-family: #ffbbff;
+  color: #0d0d0d;
+}
+
+.edit-post-visual-editor h1,.edit-post-visual-editor h2,.edit-post-visual-editor h3,.edit-post-visual-editor h4,.edit-post-visual-editor h5,.edit-post-visual-editor h6,.edit-post-visual-editor p,.edit-post-visual-editor a,.edit-post-visual-editor blockquote,.edit-post-visual-editor cite,.edit-post-visual-editor pre,.edit-post-visual-editor label,.edit-post-visual-editor figcaption {
+  font-weight: inherit;
+  word-break: break-word;
+}
+
+.edit-post-visual-editor h1,.edit-post-visual-editor h2,.edit-post-visual-editor h3,.edit-post-visual-editor h4,.edit-post-visual-editor h5,.edit-post-visual-editor h6 {
+  font-family: Georgia, serif;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.edit-post-visual-editor h1 + p,.edit-post-visual-editor h2 + p,.edit-post-visual-editor h3 + p,.edit-post-visual-editor h4 + p,.edit-post-visual-editor h5 + p,.edit-post-visual-editor h6 + p {
+  margin-top: 0;
+}
+
+.edit-post-visual-editor h1,.edit-post-visual-editor h2,.edit-post-visual-editor h4,.edit-post-visual-editor h6 {
+  font-weight: bold;
+}
+
+.edit-post-visual-editor h2,.edit-post-visual-editor h4 {
+  letter-spacing: 0.5px;
+  font-family: #ffbbff;
+}
+
+.edit-post-visual-editor h1 {
+  font-size: 40px;
+  font-size: 2.2222222222rem;
+  line-height: 1;
+}
+
+.edit-post-visual-editor h2 {
+  font-size: 24px;
+  font-size: 1.3333333333rem;
+  line-height: 1;
+}
+
+.edit-post-visual-editor h3 {
+  font-size: 32px;
+  font-size: 1.7777777778rem;
+  line-height: 1;
+}
+
+.edit-post-visual-editor h4 {
+  font-size: 24px;
+  font-size: 1.3333333333rem;
+  line-height: 1;
+}
+
+.edit-post-visual-editor h5 {
+  font-size: 24px;
+  font-size: 1.3333333333rem;
+  line-height: 1;
+}
+
+.edit-post-visual-editor h6 {
+  font-size: 16px;
+  font-size: 0.8888888889rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.edit-post-visual-editor a,.edit-post-visual-editor blockquote,.edit-post-visual-editor cite,.edit-post-visual-editor pre,.edit-post-visual-editor label,.edit-post-visual-editor figcaption {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.edit-post-visual-editor p {
+  margin-bottom: 8px;
+}
+
+.edit-post-visual-editor a {
+  color: #ffbbff;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.edit-post-visual-editor a:hover {
+  color: #ffbbff;
+  text-decoration: underline;
+}
+
+.edit-post-visual-editor small,.edit-post-visual-editor sub,.edit-post-visual-editor sup {
+  font-size: 12px;
+  font-size: 0.6666666667rem;
+  line-height: 1;
+}
+
+.edit-post-visual-editor sup {
+  vertical-align: top;
+}
+
+.edit-post-visual-editor mark {
+  background-color: #ffbbff;
+  color: #ffbbff;
+}
+
+.edit-post-visual-editor figcaption {
+  font-size: 14px;
+  font-size: 0.7777777778rem;
+  line-height: 1;
+}
+
+.edit-post-visual-editor dl,.edit-post-visual-editor ol,.edit-post-visual-editor ul,.edit-post-visual-editor dt,.edit-post-visual-editor dd,.edit-post-visual-editor li,.edit-post-visual-editor tr,.edit-post-visual-editor th,.edit-post-visual-editor caption {
+  font-family: inherit;
+}
+
+/**
+ * =========================
+ *    || Layout
+ * =========================
+ */
+
+/* NONE */
+
+/**
+ * =========================
+ *    || Module
+ * =========================
+ */
+
+/**
+ *
+ * ██████╗ ████████╗███╗   ██╗
+ * ██╔══██╗╚══██╔══╝████╗  ██║
+ * ██████╔╝   ██║   ██╔██╗ ██║
+ * ██╔══██╗   ██║   ██║╚██╗██║
+ * ██████╔╝   ██║   ██║ ╚████║
+ * ╚═════╝    ╚═╝   ╚═╝  ╚═══╝
+ *
+ *
+ * This sheet contains:
+ * * The btn (button) module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.btn {
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 3em;
+  padding: 16px 32px;
+  text-transform: uppercase;
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
+  font-weight: 700;
+}
+
+.btn.primary {
+  color: #ffffff;
+  background-color: #ffbbff;
+}
+
+.btn.primary:hover {
+  background-color: #ffffff;
+  color: #ffbbff;
+}
+
+.btn.secondary {
+  background-color: #ffffff;
+  color: #ffbbff;
+}
+
+.btn.secondary:hover {
+  border: 3px solid transparent;
+  background-color: #ffbbff;
+  color: #ffffff;
+}
+
+.btn.clean {
+  background-color: initial;
+  border: 0;
+  -webkit-box-shadow: initial;
+  box-shadow: initial;
+  padding: 0;
+}
+
+.btn__icon {
+  display: block;
+  height: 100%;
+}
+
+.btn__icon svg {
+  height: 100%;
+}
+
+/**
+ *
+ * ██╗███╗   ███╗ ██████╗
+ * ██║████╗ ████║██╔════╝
+ * ██║██╔████╔██║██║  ███╗
+ * ██║██║╚██╔╝██║██║   ██║
+ * ██║██║ ╚═╝ ██║╚██████╔╝
+ * ╚═╝╚═╝     ╚═╝ ╚═════╝
+ *
+ *
+ * This sheet contains:
+ * * The img (image) module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.img {
+  width: auto;
+  height: 100%;
+}
+
+/**
+ *
+ * ███████╗██╗███████╗██╗     ██████╗
+ * ██╔════╝██║██╔════╝██║     ██╔══██╗
+ * █████╗  ██║█████╗  ██║     ██║  ██║
+ * ██╔══╝  ██║██╔══╝  ██║     ██║  ██║
+ * ██║     ██║███████╗███████╗██████╔╝
+ * ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝
+ *
+ *
+ * This sheet contains:
+ * * The field module (primarily for inputs and textareas)
+ * --------------------
+ * Used for fields that often has a value a user write or have written.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.field {
+  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  display: block;
+  background-color: #f2f2f2;
+  border: 0;
+}
+
+.field.input {
+  padding: 16px;
+}
+
+.field__option {
+  padding: 8px;
+  border-bottom: 2px solid #8c8c8c;
+}
+
+.field__option:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/**
+ *
+ * ████████╗███████╗██╗  ██╗████████╗    ██╗     ██╗███████╗████████╗
+ * ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝    ██║     ██║██╔════╝╚══██╔══╝
+ *    ██║   █████╗   ╚███╔╝    ██║       ██║     ██║███████╗   ██║
+ *    ██║   ██╔══╝   ██╔██╗    ██║       ██║     ██║╚════██║   ██║
+ *    ██║   ███████╗██╔╝ ██╗   ██║       ███████╗██║███████║   ██║
+ *    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝       ╚══════╝╚═╝╚══════╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The text list module
+ * --------------------
+ * A regular ul or ol list
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.text-list {
+  -webkit-padding-start: 40px;
+  padding-inline-start: 40px;
+}
+
+.text-list.disc {
+  list-style: disc;
+}
+
+.text-list.square {
+  list-style: square;
+}
+
+.text-list.roman {
+  list-style: upper-roman;
+}
+
+.text-list.decimal {
+  list-style: decimal;
+}
+
+.text-list__item {
+  list-style: inherit;
+}
+
+/**
+ *
+ * ████████╗ █████╗ ██████╗ ██╗     ███████╗███████╗
+ * ╚══██╔══╝██╔══██╗██╔══██╗██║     ██╔════╝██╔════╝
+ *    ██║   ███████║██████╔╝██║     █████╗  ███████╗
+ *    ██║   ██╔══██║██╔══██╗██║     ██╔══╝  ╚════██║
+ *    ██║   ██║  ██║██████╔╝███████╗███████╗███████║
+ *    ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * The spreadsheet module (primarily for tables)
+ * --------------------
+ * A spreadsheet for budgets or similar. Kind of like an Excel sheet.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+/**
+ *
+ * ███████╗███████╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗
+ * ██╔════╝██╔════╝██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║
+ * ███████╗█████╗  ██║        ██║   ██║██║   ██║██╔██╗ ██║
+ * ╚════██║██╔══╝  ██║        ██║   ██║██║   ██║██║╚██╗██║
+ * ███████║███████╗╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║
+ * ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+ *
+ *
+ * This sheet contains:
+ * * The section module
+ * --------------------
+ * Used for sections.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #f2f2f2;
+}
+
+.block-editor .section {
+  width: 100%;
+}
+
+.section__content {
+  margin: 0 auto;
+  max-width: 580px;
+}
+
+.section__content.wide {
+  max-width: 750px;
+}
+
+/**
+ *
+ *  ██████╗ ██╗   ██╗ ██████╗ ████████╗███████╗
+ * ██╔═══██╗██║   ██║██╔═══██╗╚══██╔══╝██╔════╝
+ * ██║   ██║██║   ██║██║   ██║   ██║   █████╗
+ * ██║▄▄ ██║██║   ██║██║   ██║   ██║   ██╔══╝
+ * ╚██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████╗
+ *  ╚══▀▀═╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * The quote module
+ * --------------------
+ * Used for quotes.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.quote {
+  font-size: 24px;
+  font-size: 1.3333333333rem;
+  line-height: 1;
+  background-color: #ffbbff;
+  color: #ffffff;
+  padding: 4px;
+  margin: 0;
+}
+
+.quote:before {
+  content: '"';
+  font-size: 160px;
+  font-size: 8.8888888889rem;
+  line-height: 1;
+  float: right;
+  vertical-align: text-top;
+  margin-top: -32px;
+  position: relative;
+}
+
+.quote__cite {
+  font-size: 16px;
+  font-size: 0.8888888889rem;
+  line-height: 1;
+}
+
+.editor-styles-wrapper {
+  padding-left: unset !important;
+  padding-right: unset !important;
+}
+
+.block-editor-block-list__block[data-align=wide],.wp-block[data-align=wide] {
+  width: 960px;
+  max-width: 100%;
+}
+
+.block-editor-block-list__block[data-align=full] .wp-block[data-align=full],.block-editor-block-list__block[data-align=wide],.wp-block[data-align=wide] {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.block-editor-block-list__block[data-align=full] {
+  max-width: initial;
+}
+
+.wp-block[data-align=full] {
+  width: 100%;
+}
+
+.alignwide,.alignfull {
+  max-width: 100%;
+}
+
+/**
+* =========================
+*    || State
+* =========================
+*/
+
+/**
+ *
+ * ███████╗████████╗ █████╗ ████████╗███████╗
+ * ██╔════╝╚══██╔══╝██╔══██╗╚══██╔══╝██╔════╝
+ * ███████╗   ██║   ███████║   ██║   █████╗
+ * ╚════██║   ██║   ██╔══██║   ██║   ██╔══╝
+ * ███████║   ██║   ██║  ██║   ██║   ███████╗
+ * ╚══════╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * All State changes
+ *
+ * This sheet is a part of the State folder and follow the State rules:
+ * A state is something that augments and overrides all other styles (something that changes the state of something).
+ * For example, an accordion section may be in a collapsed or expanded state. A message may be in a success or error
+ * state. States are generally applied to the same element as a layout rule or applied to the same element as a
+ * base module class.
+ */
+
+/**
+ * =========================
+ *    || Theme
+ * =========================
+ */
+
+/**
+ *
+ * ████████╗██╗  ██╗███████╗███╗   ███╗███████╗
+ * ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝
+ *    ██║   ███████║█████╗  ██╔████╔██║█████╗
+ *    ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝
+ *    ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗
+ *    ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * All Theme changes
+ *
+ * This sheet is a part of the Theme folder and follow the Theme rules:
+ * Overall general changes to the entire site as for example font rules, background images link and border colors.
+ * Used for alternate themes.
+ */
+
+@media only screen and (min-width: 600px) {
+  .edit-post-visual-editor h1 {
+    font-size: 48px;
+    font-size: 2.6666666667rem;
+    line-height: 1;
+  }
+
+  .edit-post-visual-editor h2 {
+    font-size: 32px;
+    font-size: 1.7777777778rem;
+    line-height: 1;
+  }
+}

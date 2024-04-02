@@ -9,6 +9,10 @@ Before getting started, make sure you have Docker and Docker Compose installed o
 -   [Docker Installation Guide](https://docs.docker.com/get-docker/)
 -   [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
 
+Also make sure you have the latest LTS version of Node.js installed and added npm to your PATH:
+
+-   [Node.js Download](https://nodejs.org/en/download)
+
 ## Getting Started
 
 To set up the PHP Docker environment, follow these steps:
@@ -24,6 +28,30 @@ To set up the PHP Docker environment, follow these steps:
     ```
 
 4. **Access the Application:** Once the containers are up and running, you can access your PHP application via a web browser at `http://127.0.0.1`. Note that Nginx's welcome screen may be displayed at `http://localhost`.
+5. **Navigate to your theme folder:** In the same terminal window, change the directory to the mytheme theme folder:
+    ```
+    cd app/public/wp-content/themes/mytheme
+    ```
+6. **Install dependencies:** Use npm (Node Package Manager) to install the necessary dependencies for the theme located in directory. These dependencies typically include libraries and tools required for tasks like compiling Sass to CSS, minifying JavaScript, and optimizing images.
+
+    ```
+    npm i
+    ```
+
+7. **Run gulp and live server:** Execute the gulp command to run Gulp tasks configured for your theme. Gulp automates various development tasks such as compiling SASS to CSS and minifying JavaScript. Additionally, it starts a live server, enabling real-time updates and browser synchronization during development.
+
+    ```
+    npm start
+    ```
+
+A new window should open, showing a live server of http://127.0.0.1.
+
+1. **Setup WordPress:** If the website is new and don't have a wp-config.php (not yet linked to a database), you'll need to provide database information found in `docker-compose.yaml` for the initial WordPress setup. Remember, the username and password provided are for local development only:
+
+    - Database Name: `wp`
+    - Database Username: `wp`
+    - Database Password: `secret`
+    - Database Host: `mysql`
 
 ## Configuration
 
@@ -46,7 +74,7 @@ Persistent data for the MySQL database is stored in a Docker volume named `mysql
 ## Cleanup
 
 To stop and remove the Docker containers created by this environment, run the following command in the project directory:
-`docker-compose down`
+`docker-compose down`.
 
 ## Acknowledgments
 
