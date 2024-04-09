@@ -63,6 +63,12 @@ A new window should open, showing a live server of http://127.0.0.1.
 
 -   **MySQL Configuration:** MySQL database credentials and settings can be modified in the `docker-compose.yml` file under the `mysql` service section. You can change the database name, user credentials, and other settings as needed.
 
+-   **Wordpress Configuration:** WordPress might require FTP info in order to update plugins and core when running PHP server through Docker. To prevent this, add the following code to `wp-config.php`
+    ```
+    /** Allow downloads without FTP info */
+    define( 'FS_METHOD', 'direct' );
+    ```
+    
 ## Services
 
 -   **web:** Nginx web server container exposing port 80.
